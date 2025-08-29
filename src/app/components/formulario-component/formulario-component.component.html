@@ -1,0 +1,143 @@
+<h2>CADASTRO DE DIVIDAS</h2>
+
+<form class="" (ngSubmit)="submit()" [formGroup]="formDivida" #formDir="ngForm">
+     <div class="row">
+        <div class="col">
+            <div class="form-group mb-3">
+            <label for="" class="form-label">Numero do Titulo</label>
+            <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+            formControlName="numeroTitulo"
+            />
+        </div>
+     </div>
+     <div class="col">        
+         <div class="form-group mb-3">
+            <label for="" class="form-label">Nome do Devedor</label>
+            <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+            formControlName="nomeDevedor"
+            />
+        </div>
+     </div>
+     <div class="col">
+            <div class="form-group mb-3">
+            <label for="" class="form-label">CPF do Devedor</label>
+            <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+            formControlName="cpfDevedor"
+            />
+        </div>
+     </div>
+    </div>  
+
+     <div class="row">
+        <div class="col">
+            <div class="form-group mb-3">
+            <label for="" class="form-label">Porcentagem de Juros</label>
+            <input
+            type="number"
+            name=""
+            id=""
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+            formControlName="juros"
+            />
+        </div>
+     </div>
+     <div class="col">        
+         <div class="form-group mb-3">
+            <label for="" class="form-label">Porcentagem de Multa</label>
+            <input
+            type="number"
+            name=""
+            id=""
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+            formControlName="multa"
+            />
+        </div>
+     </div>
+    
+    </div> 
+    <hr>
+    <p>Parcelas da Divida</p>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="mb-3">
+                <label for="" class="form-label">Numero da parcela</label>
+                <input
+                    type="number"
+                    min="1"
+                    name=""
+                    id=""
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                    formControlName="numeroParcela"
+                />                
+            </div>
+            
+        </div>
+        <div class="col">
+             <div class="mb-3">
+                <label for="" class="form-label">Data Vencimento</label>
+                <input
+                    type="date"
+                    name=""
+                    id=""
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                    formControlName="vencimentoParcela"
+                />
+                
+            </div>
+        </div>
+        <div class="col">
+             <div class="mb-3">
+                <label for="" class="form-label">Valor</label>
+                <input
+                    type="number"
+                    step="0.01" 
+                    min="0"
+                    name=""
+                    id=""
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                    formControlName="valorParcela"
+                />
+               </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success" (click)="cadastrarParcelas()">Incluir Parcela</button>
+        </div>
+    </div>
+    <hr>
+    <button
+        type="submit"
+        class="btn btn-primary m-1"
+    >
+        Cadastrar Divida
+    </button>
+    
+</form>
+

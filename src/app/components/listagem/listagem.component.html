@@ -1,0 +1,44 @@
+<h2>{{title}}</h2>
+<p></p>
+
+<div *ngIf="listagem.conteudo.length === 0; else conteudo">
+  Nenhuma divida foi encontrada.
+</div>
+
+<ng-template #conteudo>
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 " *ngFor="let item of listagem.conteudo">
+                <div class="listagem m-2" >
+                    <div class="card p-3 bg-secondary text-white" >
+                        <h4 class="card-title">Numero do Titulo: {{item.numeroTitulo}}</h4>
+                        <hr>
+                        <div class="card-body">
+                            <h6 class="card-text"> Nome do devedor: {{item.nomeDevedor}}</h6>
+                            <h6 class="card-text"> Quantidade de Parcelas: {{item.quantidadeParcelas}}</h6>
+                            <h6 class="card-text"> Dias em atraso: {{item.diasEmAtraso}}</h6>
+                            <h6 class="card-text"> Valor Original: R${{item.valorOriginal}}</h6>
+                            <h6 class="card-text"> Valor Atualizado: R${{item.valorAtualizado}}</h6>
+                        
+                        </div>
+                        <hr>
+                        <div class="card bg-light" >
+                            <div class="card-body">
+                                <h4 class="card-title">Parcelas</h4>
+                            </div>
+                            <ul class="list-group list-group-flush m-2" *ngFor="let parcela of item.parcelas">
+                                <li class="list-group-item">Numero: {{parcela.numero}}</li>
+                                <li class="list-group-item">Vencimento: {{parcela.vencimento}}</li>
+                                <li class="list-group-item">Dias em atraso: {{parcela.diasAtraso}}</li>
+                                <li class="list-group-item">Valor: R${{parcela.valor}}</li>
+                                <li class="list-group-item">Valor Atualizado: R${{parcela.valorAtualizado}}</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
